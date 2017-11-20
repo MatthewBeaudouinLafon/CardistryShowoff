@@ -1,3 +1,6 @@
+# To prevent over-studying the game, the categories aren't open source (sorry)
+categories.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

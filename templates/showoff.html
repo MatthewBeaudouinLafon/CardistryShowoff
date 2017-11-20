@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Showoff</title>
+</head>
+</html>
+
+<body>
+	<h1>Showoff</h1>
+
+	<form action="/" method="post">
+		<input type="submit" name="new_category" value="New Category">
+	</form>
+	<div>
+		{{category}}
+	</div>
+
+	<br>
+
+	<form action="/" method="post">
+		<input type="submit" name="new_modifier" value="Modify {{category}}">
+	</form>
+	<div>
+		{{modifier}}
+	</div>
+</body>
