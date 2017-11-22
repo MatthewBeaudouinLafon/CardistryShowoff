@@ -1,0 +1,35 @@
+.button-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 0;
+}
+
+.button-primary {
+	margin: 0 1em;
+}
+
+.title {
+	margin: 0;
+}
+
+.container-main {
+	margin-top: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 10em;
+	height: 40vh;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.footer a + a {
+	margin-left: 1em;
+}

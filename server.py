@@ -11,10 +11,14 @@ from categories import categories, modifiers
 
 from flask import Flask, render_template, request, g
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # Fuck what you heard
+
+# TODO: Taunting Modify button
 
 # TODO: Make using g work
 # with app.app_context():
 # 	setattr(g, 'current_category', '') #TODO: Consider not doing global?
+
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
@@ -29,8 +33,7 @@ def main():
 			modifier = ''
 		elif request.form.get('new_modifier', None):
 			# category = getattr(g, "current_category", None)
-			category = request.form.get('new_modifier', None)
-			category = category[7:] # I ... I'm sorry
+			category = request.form.get('current_category', None)
 			modifier = sample(modifiers - categories[category], 1)[0] if category != None else ''
 
 
