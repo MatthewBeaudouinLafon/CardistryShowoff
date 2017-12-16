@@ -6,8 +6,10 @@
 }
 
 .button-primary {
-	margin: 0 1em;
+	margin-left: 0.75em;
+	margin-right: 0.75em;
 }
+
 
 .title {
 	margin: 0;
@@ -15,11 +17,10 @@
 
 .container-main {
 	margin-top: 1em;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	min-height: 10em;
-	height: 40vh;
+}
+
+.element-main {
+	margin-bottom: 40px;
 }
 
 .footer {
@@ -29,6 +30,7 @@
 	display: flex;
 	justify-content: center;
 }
+/*TODO: Fix footer overlapping with button when making page vertically small*/
 
 .footer a + a {
 	margin-left: 1em;

@@ -1,24 +1,19 @@
 """
 A Flask server to run Showoff
 
-author: Matthew Beaudouin-Lafon
-date  : 2017-11-19
+author : Matthew Beaudouin-Lafon
+date   : 2017-11-19
 license: MIT
 """
 import os
 from random import sample
 from categories import categories, modifiers
 
-from flask import Flask, render_template, request, g
+from flask import Flask, render_template, request
 app = Flask(__name__)
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # Fuck what you heard
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # Deal with CSS getting cached during dev
 
 # TODO: Taunting Modify button
-
-# TODO: Make using g work
-# with app.app_context():
-# 	setattr(g, 'current_category', '') #TODO: Consider not doing global?
-
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
@@ -27,12 +22,9 @@ def main():
 	if request.method == 'POST':
 		print(request.form)
 		if request.form.get('new_category', None):
-			# print("New Category")
 			category = sample(list(categories), 1)[0]
-			# setattr(g, 'current_category', category)
 			modifier = ''
 		elif request.form.get('new_modifier', None):
-			# category = getattr(g, "current_category", None)
 			category = request.form.get('current_category', None)
 			modifier = sample(modifiers - categories[category], 1)[0] if category != None else ''
 

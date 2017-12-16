@@ -10,14 +10,14 @@
 
 <body>
 	<div class="container-main">
-		<h1 class="title" style="text-align: center">Showoff</h1>
+		<h1 class="title element-main" style="text-align: center">Showoff</h1>
 
-		<form class="button-container" action="/" method="post">
+		<form class="button-container element-main" action="/" method="post">
 				<input class="button-primary" type="submit" name="new_category" value="Category">
 				<input class="button-primary" type="submit" name="new_modifier" value="Modify">
 				<input type="hidden" name="current_category" value="{{category}}">
 		</form>
-		<div style="text-align: center">
+		<div class="element-main" style="text-align: center">
 			{{category}}
 			<br>
 			{{modifier}}
